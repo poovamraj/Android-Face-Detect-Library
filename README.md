@@ -7,7 +7,7 @@ Document Writing in process
 
 - **Points of Interest**
 ```
-Important classes like Camera Handler and Persistence Service are implemented using a abstraction so that its implementation can be interchanged in any way without a single code change
+- Important classes like Camera Handler and Persistence Service are implemented using a abstraction so that its implementation can be interchanged in any way without a single code change
 
 - All the classes are Decoupled from one another. 
 
