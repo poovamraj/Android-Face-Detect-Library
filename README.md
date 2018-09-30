@@ -2,6 +2,8 @@
 
 Document Writing in process
 
+![Android-Face-Detect-Library](https://media.giphy.com/media/cI5PPGv1990XfAt4RG/giphy.gif)
+
 - **Library Dependencies Explained**
 
 ```
@@ -47,5 +49,6 @@ faceCaptureTextColor - Normal Text Color
 ```
 
 This Library handles the "Dont Ask Again" in Permission properly where most library misses out. A seperate Dialog box is shown which will redirect the user to settings and can enable the permission there
+
 
 There are lot more design decisions that has been taken in the library which I would welcome to discuss
