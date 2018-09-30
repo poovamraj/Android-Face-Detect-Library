@@ -5,17 +5,17 @@ Document Writing in process
 ![Android-Face-Detect-Library](https://media.giphy.com/media/cI5PPGv1990XfAt4RG/giphy.gif)
 
 
-- **Points to Interest**
+- **Points of Interest**
 ```
 Important classes like Camera Handler and Persistence Service are implemented using a abstraction so that its implementation can be interchanged in any way without a single code change
 
-All the classes are Decoupled from one another. 
+- All the classes are Decoupled from one another. 
 
-Designed in a way to scale the library more in future
+- Designed in a way to scale the library more in future
 
-Clean Architecture where View is seperated from Domain Logic
+- Clean Architecture where View is seperated from Domain Logic
 
-There are lot more design decisions that has been taken in the library which I would welcome to discuss
+- There are lot more design decisions that has been taken in the library which I would welcome to discuss
 ```
 
 - **Library Dependencies Explained**
