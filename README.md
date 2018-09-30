@@ -90,6 +90,10 @@ Overlay could have been achieved if Mobile Vision from Google Play Service was u
 
 - **TODO**
 ```
+- Directly open upto Capture Activity and End without preview. Leaving all the option to sdk user
+  and giving just the Capture Activity (This can be achieved with less than 5-10 lines of code without
+  modifying the architecture. Not working on it now since the time is up)
+
 - Upload the library to bintray
 
 - Ability to use custom fragments (Thats why library is designed in that manner)
