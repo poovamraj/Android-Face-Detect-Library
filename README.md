@@ -10,7 +10,8 @@ avoid libaries, I have used the best and latest libraries to portray my skills
 
     Constraint Layout 
     
-    RxJava - To process the stream of information from camera (We can customize the amount of information we process in the stream by controlling the timeoutInMillis parameter in Camera Handler)
+    RxJava - To process the stream of information from camera (We can customize the amount of 
+    information we process in the stream by controlling the timeoutInMillis parameter in Camera Handler)
     
     Android Life Cycle - Used to handle life cycle of Camera Handler and other Presenters (Without ViewModel and LiveData)
 ```
@@ -43,3 +44,5 @@ faceCaptureButtonTextColor - Button Text Color
 
 faceCaptureTextColor - Normal Text Color
 ```
+
+This Library handles the "Dont Ask Again" in Permission properly where most library misses out. A seperate Dialog box is shown which will redirect the user to settings and can enable the permission there
