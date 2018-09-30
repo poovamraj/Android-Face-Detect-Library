@@ -4,6 +4,20 @@ Document Writing in process
 
 ![Android-Face-Detect-Library](https://media.giphy.com/media/cI5PPGv1990XfAt4RG/giphy.gif)
 
+
+- **Points to Interest**
+```
+Important classes like Camera Handler and Persistence Service are implemented using a abstraction so that its implementation can be interchanged in any way without a single code change
+
+All the classes are Decoupled from one another. 
+
+Designed in a way to scale the library more in future
+
+Clean Architecture where View is seperated from Domain Logic
+
+There are lot more design decisions that has been taken in the library which I would welcome to discuss
+```
+
 - **Library Dependencies Explained**
 
 ```
@@ -15,8 +29,8 @@ avoid libaries, I have used the best and latest libraries to portray my skills
     RxJava - To process the stream of information from camera (We can customize the amount of 
     information we process in the stream by controlling the timeoutInMillis parameter in Camera Handler)
     
-    Android Life Cycle - Used to handle life cycle of Camera Handler and 
-    other Presenters (Without ViewModel and LiveData)
+    Android Life Cycle - Used to handle life cycle of Camera Handler, Persistence and 
+    other Presenters and making it decoupled (Without ViewModel and LiveData)
 ```
 
 - **Decision to use Fotoapparat Library**
@@ -47,10 +61,6 @@ faceCaptureButtonTextColor - Button Text Color
 
 faceCaptureTextColor - Normal Text Color
 ```
-
-There are lot more design decisions that has been taken in the library which I would welcome to discuss
-
-Important classes like Camera Handler and Persistence Service are implemented using a abstract super class so that its implementation can be interchanged in any way without a single code change
 
 This Library handles the "Dont Ask Again" in Permission properly where most library misses out. A seperate Dialog box is shown which will redirect the user to settings and can enable the permission there
 
