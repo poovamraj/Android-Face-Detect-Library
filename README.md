@@ -29,12 +29,12 @@ Document Writing in process
 Though it is necessary that to keep the library lean and it is best to
 avoid libaries, I have used the best and latest libraries to portray my skills
 
-    Constraint Layout 
+    - Constraint Layout 
     
-    RxJava - To process the stream of information from camera (We can customize the amount of 
+    - RxJava - To process the stream of information from camera (We can customize the amount of 
     information we process in the stream by controlling the timeoutInMillis parameter in Camera Handler)
     
-    Android Life Cycle - Used to handle life cycle of Camera Handler, Persistence and 
+    - Android Life Cycle - Used to handle life cycle of Camera Handler, Persistence and 
     other Presenters and making it decoupled (Without ViewModel and LiveData)
     
 ```
