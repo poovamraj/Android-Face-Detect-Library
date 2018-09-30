@@ -2,7 +2,7 @@
 
 Document Writing in process
 
-- **Library Dependencies Explained **
+- **Library Dependencies Explained**
 
 ```
 Though it is necessary that to keep the library lean it best to
