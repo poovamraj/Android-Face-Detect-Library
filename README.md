@@ -87,7 +87,10 @@ Overlay could have been achieved if Mobile Vision from Google Play Service was u
 - **TODO**
 ```
 - Upload the library to bintray
+
 - Ability to use custom fragments (Thats why library is designed in that manner)
+
 - Though In Memory Persistence currently used is stable, Should analyze more deeply"
   whether to proceed with same method or can adopt different method like Local storage
+  
 ```
