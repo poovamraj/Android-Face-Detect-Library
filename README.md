@@ -18,7 +18,12 @@ Document Writing in process
 
 - Clean Architecture where View is seperated from Domain Logic
 
+- Perfect backstack handling and very stable
+
+- Supports all the way upto API 14
+
 - There are lot more design decisions that has been taken in the library which I would welcome to discuss
+
 ```
 
 
