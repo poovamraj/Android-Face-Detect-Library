@@ -5,7 +5,7 @@ Document Writing in process
 
 - **Customizing the View of the library**
 
-```gradle
+```
 faceCaptureBackground - Background Color
 
 faceCaptureLightBackground - Light Background Color
