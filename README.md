@@ -2,6 +2,29 @@
 
 Document Writing in process
 
+- **Library Dependencies Explained **
+
+```
+Though it is necessary that to keep the library lean it best to
+avoid libaries, I have used the best and latest libraries to portray my skills
+
+    Constraint Layout 
+    
+    RxJava - To process the stream of information from camera (We can customize the amount of information we process in the stream by controlling the timeoutInMillis parameter in Camera Handler)
+    
+    Android Life Cycle - Used to handle life cycle of Camera Handler and other Presenters (Without ViewModel and LiveData)
+```
+
+- **Decision to use Fotoapparat Library**
+
+```
+Since The current library supports until API 14 and Camera API in Android is too low level to work within 48 hours
+I decided to adopt a photo library
+
+Fotoapparat vs CameraKit vs Others
+-Much smaller in size compared to CameraKit. CameraKit will make the user do ABI
+-CameraView in Google Repository is still in preview
+```
 
 - **Customizing the View of the library**
 
