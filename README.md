@@ -94,6 +94,8 @@ Overlay could have been achieved if Mobile Vision from Google Play Service was u
 
 - Ability to use custom fragments (Thats why library is designed in that manner)
 
+- Provide a way to direcly open the camera view instead of going through the steps.
+
 - Though In Memory Persistence currently used is stable, Should analyze more deeply"
   whether to proceed with same method or can adopt different method like Local storage
   
