@@ -6,8 +6,11 @@ Document Writing in process
 
 
 - **Points of Interest**
+
 ```
-- Important classes like Camera Handler and Persistence Service are implemented using a abstraction so that its implementation can be interchanged in any way without a single code change
+- Important classes like Camera Handler and Persistence Service
+  are implemented using a abstraction so that its implementation can 
+  be interchanged in any way without a single code change
 
 - All the classes are Decoupled from one another. 
 
@@ -17,6 +20,8 @@ Document Writing in process
 
 - There are lot more design decisions that has been taken in the library which I would welcome to discuss
 ```
+
+
 
 - **Library Dependencies Explained**
 
@@ -33,6 +38,8 @@ avoid libaries, I have used the best and latest libraries to portray my skills
     other Presenters and making it decoupled (Without ViewModel and LiveData)
 ```
 
+
+
 - **Decision to use Fotoapparat Library**
 
 ```
@@ -42,7 +49,11 @@ I decided to adopt a photo library
 Fotoapparat vs CameraKit vs Others
 -Much smaller in size compared to CameraKit. CameraKit will make the user do ABI
 -CameraView in Google Repository is still in preview
+-Mobile Vision from Google Play Service is not used since it is payable and wont be 
+scalable for organizations
 ```
+
+
 
 - **Customizing the View of the library**
 
@@ -66,3 +77,11 @@ This Library handles the "Dont Ask Again" in Permission properly where most libr
 
 <img src="https://image.ibb.co/iJn61z/Whats_App_Image_2018_09_30_at_8_44_17_PM.jpg" width="256">
 
+Overlay could have been achieved if Mobile Vision from Google Play Service was used. But it costs $0.60 for every 1000 units.
+
+
+- **TODO**
+```
+- Upload the library to bintray
+- 
+```
