@@ -26,7 +26,7 @@ Document Writing in process
 - **Library Dependencies Explained**
 
 ```
-Though it is necessary that to keep the library lean it best to
+Though it is necessary that to keep the library lean and it is best to
 avoid libaries, I have used the best and latest libraries to portray my skills
 
     Constraint Layout 
@@ -36,6 +36,7 @@ avoid libaries, I have used the best and latest libraries to portray my skills
     
     Android Life Cycle - Used to handle life cycle of Camera Handler, Persistence and 
     other Presenters and making it decoupled (Without ViewModel and LiveData)
+    
 ```
 
 
@@ -44,7 +45,7 @@ avoid libaries, I have used the best and latest libraries to portray my skills
 
 ```
 Since The current library supports until API 14 and Camera API in Android is too low level to work within 48 hours
-I decided to adopt a photo library
+I decided to adopt a camera library
 
 Fotoapparat vs CameraKit vs Others
 -Much smaller in size compared to CameraKit. CameraKit will make the user do ABI
@@ -83,5 +84,5 @@ Overlay could have been achieved if Mobile Vision from Google Play Service was u
 - **TODO**
 ```
 - Upload the library to bintray
-- 
+- Ability to use custom fragmentss (Thats why library is designed in that manner)
 ```
