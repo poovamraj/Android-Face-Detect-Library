@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Face Detection</string>
+    <string name="get_started">Get Started</string>
+    <string name="exit_message">Seems like you exited before completing the Identification</string>
+</resources>

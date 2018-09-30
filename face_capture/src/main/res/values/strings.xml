@@ -1,0 +1,20 @@
+<resources>
+    <string name="start_verification">Start Verification</string>
+    <string name="identity_verification">Identity Verification</string>
+    
+    <string name="permission_rationale">To proceed with your identification, allow the App to access your camera. By clicking \'Continue\' you will be taken to the settings page where you have to click \'Manage Permissions\' and provide Camera permission to the app. </string>
+    <string name="permission_not_now">NOT NOW</string>
+    <string name="permission_proceed">CONTINUE</string>
+
+    <string name="capture_success">Face captured successfully</string>
+
+    <string name="try_again">Not Satisfied? Try Again</string>
+    <string name="proceed">Continue</string>
+
+    <string name="position_guide">Position your face in the oval to take picture</string>
+
+    <string name="step_title">Verify your identity</string>
+    <string name="step_1">1. Position your face at the marked position</string>
+    <string name="step_2">2. Keep it at still position without rapid movement</string>
+    <string name="step_3">3. If the preview shown is satisfying, Press \'Continue\'</string>
+</resources>

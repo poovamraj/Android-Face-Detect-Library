@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="faceCaptureBackground">#FFFFFF</color>
+    <color name="faceCaptureLightBackground">#32A75B</color>
+    <color name="faceCaptureStatusBarColor">#2DAE4F</color>
+    <color name="faceCaptureActionBar">#2DAE4F</color>
+    <color name="faceCaptureButtonColor">#32A75B</color>
+    <color name="faceCaptureButtonTextColor">#FFFFFF</color>
+    <color name="faceCaptureTextColor">#000000</color>
+
+    <color name="face_capture_sdk_transparent_overlay_color">#A6000000</color>
+    <color name="face_capture_sdk_theme_white">#FFFFFF</color>
+    <color name="face_capture_sdk_theme_black">#000000</color>
+
+</resources>
