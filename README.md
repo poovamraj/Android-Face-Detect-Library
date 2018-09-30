@@ -49,6 +49,6 @@ faceCaptureTextColor - Normal Text Color
 ```
 
 This Library handles the "Dont Ask Again" in Permission properly where most library misses out. A seperate Dialog box is shown which will redirect the user to settings and can enable the permission there
-<img src="https://image.ibb.co/iJn61z/Whats_App_Image_2018_09_30_at_8_44_17_PM.jpg" width="512">
+<img src="https://image.ibb.co/iJn61z/Whats_App_Image_2018_09_30_at_8_44_17_PM.jpg" width="256">
 
 There are lot more design decisions that has been taken in the library which I would welcome to discuss
