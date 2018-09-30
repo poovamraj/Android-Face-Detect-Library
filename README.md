@@ -1,7 +1,5 @@
 # Android-Face-Detect-Library
 
-Document Writing in process
-
 ![Android-Face-Detect-Library](https://media.giphy.com/media/cI5PPGv1990XfAt4RG/giphy.gif)
 
 
