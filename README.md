@@ -51,10 +51,14 @@ Since The current library supports until API 14 and Camera API in Android is too
 I decided to adopt a camera library
 
 Fotoapparat vs CameraKit vs Others
+
 -Much smaller in size compared to CameraKit. CameraKit will make the user do ABI
+
 -CameraView in Google Repository is still in preview
+
 -Mobile Vision from Google Play Service is not used since it is payable and wont be 
 scalable for organizations
+
 ```
 
 
