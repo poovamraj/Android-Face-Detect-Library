@@ -12,8 +12,7 @@ import com.poovam.facecapture.R
 
 /**
  * Created by poovam-5255 on 9/28/2018.
- * The base activity to which fragments are going to be added and [com.poovam.facecapture.captureactivity.CaptureActivity]
- * will be called from
+ * The base activity which will act as common for all activities
  */
 open class BaseActivity : AppCompatActivity() {
 
@@ -33,11 +32,11 @@ open class BaseActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.identity_verification)
     }
 
-    protected fun setThemeActionBarColor(){
+    private fun setThemeActionBarColor(){
         supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this,R.color.faceCaptureActionBar)))
     }
 
-    protected fun setThemeStatusColor(){
+    private fun setThemeStatusColor(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = ContextCompat.getColor(this,R.color.faceCaptureStatusBarColor)

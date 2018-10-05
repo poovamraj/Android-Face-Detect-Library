@@ -20,7 +20,7 @@ open class OverlayView : View {
 
     private val mPath = Path()
 
-    var rect: RectF? = null
+    private var rect: RectF? = null
 
     constructor(context: Context): super(context)
 

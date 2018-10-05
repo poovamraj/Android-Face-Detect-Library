@@ -42,16 +42,16 @@ class ImageProcessor {
             canvas.drawRect(point.x-(face.eyeDistance/2),point.y-10,point.x+(face.eyeDistance/2),point.y+10,paint)
         }
 
-        fun Bitmap.flip(horizontal: Boolean, vertical: Boolean): Bitmap {
+        private fun Bitmap.flip(horizontal: Boolean, vertical: Boolean): Bitmap {
             val matrix = Matrix()
             matrix.preScale((if (horizontal) -1 else 1).toFloat(), (if (vertical) -1 else 1).toFloat())
             return Bitmap.createBitmap(this, 0, 0, width, height, matrix, true)
         }
 
-        fun Bitmap.rotate(degrees: Float): Bitmap {
+        private fun Bitmap.rotate(degrees: Float): Bitmap {
             val matrix = Matrix()
             matrix.postRotate(degrees)
-            val scaledBitmap = Bitmap.createScaledBitmap(this, width, height, true);
+            val scaledBitmap = Bitmap.createScaledBitmap(this, width, height, true)
             return Bitmap.createBitmap(
                     scaledBitmap,
                     0,

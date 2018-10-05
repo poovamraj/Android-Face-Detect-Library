@@ -21,9 +21,9 @@ import kotlinx.android.synthetic.main.activity_capture.*
  */
 class CaptureActivity : BaseActivity(), CameraHandler.PermissionEvents, CapturePresenter.PresenterEvents{
 
-    var permissionView: PermissionRationaleView? = null
+    private var permissionView: PermissionRationaleView? = null
 
-    lateinit var presenter: CapturePresenter
+    private lateinit var presenter: CapturePresenter
 
     private val previewFragment = PreviewFragment()
 
