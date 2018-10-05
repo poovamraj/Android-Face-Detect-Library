@@ -1,12 +1,8 @@
 package com.poovam.facecapture.framework.camera
 
 import android.graphics.*
-import android.media.FaceDetector
-import com.poovam.facecapture.framework.camera.model.CapturedImage
 import com.poovam.facecapture.framework.camera.model.Face
 import com.poovam.facecapture.framework.camera.model.Frame
-import com.poovam.facecapture.framework.utils.flip
-import com.poovam.facecapture.framework.utils.rotate
 import java.io.ByteArrayOutputStream
 
 /**
@@ -34,31 +30,8 @@ class ImageProcessor {
             return bm!!
         }
 
-        fun cropToImage(bitmap: Bitmap): Bitmap {
-            val rect = CaptureRegion.getCaptureRegionForScreen(bitmap.width, bitmap.height)
+        fun cropToImage(bitmap: Bitmap, rect: Rect): Bitmap {
             return Bitmap.createBitmap(bitmap, rect.left, rect.top, rect.width(), rect.height())
-        }
-
-        fun mapFrameToCapturedImage(frame: Frame, bitmapOptions: BitmapFactory.Options): CapturedImage {
-            var bitmap = convertFrameToBitmap(frame, 25, bitmapOptions)
-            bitmap = cropToImage(bitmap)
-            val face = detectFace(bitmap)
-            if(face != null)
-                return CapturedImage(frame, face)
-            return CapturedImage(frame, null)
-        }
-
-        fun detectFace(bitmap: Bitmap): Face? {
-            val detector = FaceDetector(bitmap.width,bitmap.height,1)
-            val faces = arrayOfNulls<FaceDetector.Face>(1)
-            detector.findFaces(bitmap,faces)
-            val face = faces[0]
-            if(face!=null){
-                val point = PointF()
-                face.getMidPoint(point)
-                return Face(face.confidence(), face.eyesDistance(), point)
-            }
-            return null
         }
 
         fun putOverlay(bitmap: Bitmap, face: Face) {
@@ -67,6 +40,27 @@ class ImageProcessor {
             val paint = Paint()
             paint.color = Color.BLUE
             canvas.drawRect(point.x-(face.eyeDistance/2),point.y-10,point.x+(face.eyeDistance/2),point.y+10,paint)
+        }
+
+        fun Bitmap.flip(horizontal: Boolean, vertical: Boolean): Bitmap {
+            val matrix = Matrix()
+            matrix.preScale((if (horizontal) -1 else 1).toFloat(), (if (vertical) -1 else 1).toFloat())
+            return Bitmap.createBitmap(this, 0, 0, width, height, matrix, true)
+        }
+
+        fun Bitmap.rotate(degrees: Float): Bitmap {
+            val matrix = Matrix()
+            matrix.postRotate(degrees)
+            val scaledBitmap = Bitmap.createScaledBitmap(this, width, height, true);
+            return Bitmap.createBitmap(
+                    scaledBitmap,
+                    0,
+                    0,
+                    scaledBitmap.width,
+                    scaledBitmap.height,
+                    matrix,
+                    true
+            )
         }
     }
 }

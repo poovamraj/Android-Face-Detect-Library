@@ -7,7 +7,17 @@ import com.poovam.facecapture.framework.camera.model.ResultImage
 /**
  * Created by poovam-5255 on 9/30/2018.
  */
-interface Handler {
+interface CameraHandler {
+
+    companion object {
+        val DEFAULT_TIMEOUT = 200L
+
+        val FACE_DETECTION_IMAGE_QUALITY = 25
+
+        val FINAL_IMAGE_QUALITY = 100
+
+        val NO_OF_FACES = 1
+    }
 
     fun initCamera()
 

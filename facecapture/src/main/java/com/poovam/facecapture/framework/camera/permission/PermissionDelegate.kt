@@ -15,7 +15,9 @@ import android.support.v4.content.ContextCompat
  */
 class PermissionDelegate(private val activity: Activity) {
 
-    private val REQUEST_CODE = 10
+    companion object {
+        private val REQUEST_CODE = 10
+    }
 
     fun hasCameraPermission(): Boolean {
         val permissionCheckResult = ContextCompat.checkSelfPermission(

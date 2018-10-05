@@ -3,8 +3,8 @@ package com.poovam.facecapture.captureactivity.presenter
 import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.OnLifecycleEvent
+import com.poovam.facecapture.framework.camera.handler.CameraHandler
 import com.poovam.facecapture.framework.camera.handler.FotoApparatCameraHandler
-import com.poovam.facecapture.framework.camera.handler.Handler
 import com.poovam.facecapture.framework.camera.model.ResultImage
 import com.poovam.facecapture.framework.persistence.InMemoryPersistence
 import com.poovam.facecapture.framework.persistence.Persistence
@@ -13,7 +13,7 @@ import com.poovam.facecapture.framework.persistence.Persistence
  * Created by poovam-5255 on 9/29/2018.
  */
 
-class CapturePresenter(private val cameraHandler: FotoApparatCameraHandler) : LifecycleObserver, Handler.CameraEvents {
+class CapturePresenter(private val cameraHandler: FotoApparatCameraHandler) : LifecycleObserver, CameraHandler.CameraEvents {
 
     private val persistenceService: Persistence = InMemoryPersistence
 

@@ -6,6 +6,9 @@ import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.OnLifecycleEvent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.PointF
+import android.media.FaceDetector
+import com.poovam.facecapture.framework.camera.CaptureRegion
 import com.poovam.facecapture.framework.camera.ImageProcessor
 import com.poovam.facecapture.framework.camera.model.*
 import com.poovam.facecapture.framework.camera.permission.PermissionDelegate
@@ -24,7 +27,7 @@ import java.util.concurrent.TimeUnit
 class FotoApparatCameraHandler(
         private val activity: Activity,
         private val cameraView: CameraRenderer,
-        private val timeoutInMillis: Long = 200) : LifecycleObserver, Handler {
+        private val timeoutInMillis: Long = CameraHandler.DEFAULT_TIMEOUT) : LifecycleObserver, CameraHandler {
 
     private val bitmapOptions = BitmapFactory.Options()
 
@@ -33,9 +36,9 @@ class FotoApparatCameraHandler(
     /**:Deviate: Not using lateinit as it has the chance of escaping compiler check*/
     private var fotoapparat: Fotoapparat? = null
 
-    private var permissionListener: Handler.PermissionEvents? = null
+    private var permissionListener: CameraHandler.PermissionEvents? = null
 
-    private var cameraEventsListener: Handler.CameraEvents? = null
+    private var cameraEventsListener: CameraHandler.CameraEvents? = null
 
     private val permissionsDelegate = PermissionDelegate(activity)
 
@@ -53,13 +56,13 @@ class FotoApparatCameraHandler(
 
     override fun initCamera(){
         frameProcessingStream = setFrameProcessing(
-                Observable.create<Frame> { emitter ->
+                Observable.create<Frame> {emitter ->
                     fotoapparat = Fotoapparat
                             .with(activity)
                             .into(cameraView)
                             .lensPosition(front())
                             .frameProcessor{ frame ->
-                                emitter.onNext(Frame(Resolution(frame.size.width, frame.size.height), frame.image, frame.rotation))
+                                emitter.onNext(Frame(Resolution(frame.size.width,frame.size.height),frame.image,frame.rotation))
                             }
                             .build()
                     startCamera()
@@ -72,7 +75,10 @@ class FotoApparatCameraHandler(
                 .subscribeOn(Schedulers.computation())
                 .sample(timeoutInMillis, TimeUnit.MILLISECONDS)
                 .map<CapturedImage> {
-                    frame -> ImageProcessor.mapFrameToCapturedImage(frame,bitmapOptions)
+                    frame ->
+                    var bitmap = ImageProcessor.convertFrameToBitmap(frame, CameraHandler.FACE_DETECTION_IMAGE_QUALITY, bitmapOptions)
+                    bitmap = ImageProcessor.cropToImage(bitmap, CaptureRegion.getCaptureRegionForScreen(bitmap.width, bitmap.height))
+                    return@map CapturedImage(frame, detectFace(bitmap))
                 }
                 .filter{
                     capturedImage -> return@filter capturedImage.face != null && capturedImage.face.confidence >= Face.CONFIDENCE_THRESHOLD
@@ -85,9 +91,9 @@ class FotoApparatCameraHandler(
                 )
                 .subscribe(
                         { capturedImage ->
-                            var bitmap = ImageProcessor.convertFrameToBitmap(capturedImage.originalFrame,100,bitmapOptions)
-                            bitmap = ImageProcessor.cropToImage(bitmap)
-                            cameraEventsListener?.onFaceCaptured(ResultImage(bitmap, capturedImage))
+                            var bitmap = ImageProcessor.convertFrameToBitmap(capturedImage.originalFrame, CameraHandler.FINAL_IMAGE_QUALITY,bitmapOptions)
+                            bitmap = ImageProcessor.cropToImage(bitmap,CaptureRegion.getCaptureRegionForScreen(bitmap.width, bitmap.height))
+                            cameraEventsListener?.onFaceCaptured(ResultImage(bitmap,capturedImage))
                         },
                         { throwable ->
                             throwable.printStackTrace()
@@ -97,8 +103,18 @@ class FotoApparatCameraHandler(
         return frameStream
     }
 
+    //TODO provide abstraction for Face Detection
     override fun detectFace(bitmap: Bitmap): Face? {
-        return ImageProcessor.detectFace(bitmap)
+        val detector = FaceDetector(bitmap.width,bitmap.height, CameraHandler.NO_OF_FACES)
+        val faces = arrayOfNulls<FaceDetector.Face>(CameraHandler.NO_OF_FACES)
+        detector.findFaces(bitmap,faces)
+        val face = faces[0]
+        if(face!=null){
+            val point = PointF()
+            face.getMidPoint(point)
+            return Face(face.confidence(),face.eyesDistance(),point)
+        }
+        return null
     }
 
     override fun resumeCamera(){
@@ -152,11 +168,11 @@ class FotoApparatCameraHandler(
         }
     }
 
-    override fun setPermissionEventsListener(listener: Handler.PermissionEvents) {
+    override fun setPermissionEventsListener(listener: CameraHandler.PermissionEvents) {
         permissionListener = listener
     }
 
-    override fun setCameraEventsListener(listener: Handler.CameraEvents) {
+    override fun setCameraEventsListener(listener: CameraHandler.CameraEvents) {
         cameraEventsListener = listener
     }
 }

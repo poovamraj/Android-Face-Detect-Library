@@ -10,8 +10,8 @@ import com.poovam.facecapture.R
 import com.poovam.facecapture.captureactivity.presenter.CapturePresenter
 import com.poovam.facecapture.captureactivity.preview.view.PreviewFragment
 import com.poovam.facecapture.framework.baseactivity.BaseActivity
+import com.poovam.facecapture.framework.camera.handler.CameraHandler
 import com.poovam.facecapture.framework.camera.handler.FotoApparatCameraHandler
-import com.poovam.facecapture.framework.camera.handler.Handler
 import kotlinx.android.synthetic.main.activity_capture.*
 
 
@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_capture.*
  * Created by poovam-5255 on 9/28/2018.
  * The activity which will have the camera instance
  */
-class CaptureActivity : BaseActivity(), Handler.PermissionEvents, CapturePresenter.PresenterEvents{
+class CaptureActivity : BaseActivity(), CameraHandler.PermissionEvents, CapturePresenter.PresenterEvents{
 
     var permissionView: PermissionRationaleView? = null
 
