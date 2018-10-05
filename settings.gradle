@@ -1,1 +1,1 @@
-include ':app',':face_capture'
+include ':app', ':facecapture'

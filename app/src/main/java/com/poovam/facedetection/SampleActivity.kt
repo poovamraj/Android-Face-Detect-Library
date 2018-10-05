@@ -5,7 +5,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.poovam.face_capture.FaceCapturer
+import com.poovam.facecapture.FaceCapturer
 import kotlinx.android.synthetic.main.activity_sample.*
 
 /**
