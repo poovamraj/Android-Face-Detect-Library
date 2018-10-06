@@ -10,7 +10,7 @@ import java.io.ByteArrayOutputStream
  */
 
 
-class ImageProcessor {
+internal class ImageProcessor {
     companion object {
         fun convertFrameToBitmap(frame: Frame, quality: Int, bitmapOptions: BitmapFactory.Options): Bitmap {
             val os = ByteArrayOutputStream()

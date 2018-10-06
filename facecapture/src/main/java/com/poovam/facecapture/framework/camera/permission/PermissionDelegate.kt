@@ -13,7 +13,7 @@ import android.support.v4.content.ContextCompat
 /**
  * Created by poovam-5255 on 9/29/2018.
  */
-class PermissionDelegate(private val activity: Activity) {
+internal class PermissionDelegate(private val activity: Activity) {
 
     companion object {
         private val REQUEST_CODE = 10

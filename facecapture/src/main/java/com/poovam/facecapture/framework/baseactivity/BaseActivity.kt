@@ -14,7 +14,7 @@ import com.poovam.facecapture.R
  * Created by poovam-5255 on 9/28/2018.
  * The base activity which will act as common for all activities
  */
-open class BaseActivity : AppCompatActivity() {
+internal open class BaseActivity : AppCompatActivity() {
 
     protected fun setupTheme(){
         setTitle()

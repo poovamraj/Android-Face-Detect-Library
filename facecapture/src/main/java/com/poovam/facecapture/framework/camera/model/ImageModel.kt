@@ -10,18 +10,18 @@ import java.util.*
  * The models used to avoid coupling
  */
 
-data class ResultImage(
+internal data class ResultImage(
         val image: Bitmap,
         val data: CapturedImage
 )
 
-data class CapturedImage(
+internal data class CapturedImage(
         val originalFrame: Frame,
         val face: Face?
 )
 
 //We use our own implementation of Face and Frame that way we can keep it decoupled
-data class Face(
+internal data class Face(
         /**
          * A confidence factor between 0 and 1
          */
@@ -41,7 +41,7 @@ data class Face(
     }
 }
 
-data class Frame(
+internal data class Frame(
         /**
          * Resolution of the frame in pixels (before rotation).
          */
@@ -76,7 +76,7 @@ data class Frame(
     }
 }
 
-data class Resolution(
+internal data class Resolution(
         @[JvmField IntRange(from = 0L)] val width: Int,
         @[JvmField IntRange(from = 0L)] val height: Int
 )

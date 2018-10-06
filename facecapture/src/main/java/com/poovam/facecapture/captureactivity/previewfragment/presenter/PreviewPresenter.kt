@@ -9,7 +9,7 @@ import com.poovam.facecapture.framework.persistence.InMemoryPersistence
 /**
  * Created by poovam-5255 on 10/6/2018.
  */
-class PreviewPresenter(private val eventListener: PreviewPresenterEvents) : LifecycleObserver{
+internal class PreviewPresenter(private val eventListener: PreviewPresenterEvents) : LifecycleObserver{
 
     private val persistence = InMemoryPersistence
 

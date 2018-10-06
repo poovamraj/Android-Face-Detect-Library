@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_preview.*
  * Created by poovam-5255 on 9/29/2018.
  */
 
-class PreviewFragment : Fragment(), PreviewPresenter.PreviewPresenterEvents {
+internal class PreviewFragment : Fragment(), PreviewPresenter.PreviewPresenterEvents {
 
     private val presenter = PreviewPresenter(this)
 

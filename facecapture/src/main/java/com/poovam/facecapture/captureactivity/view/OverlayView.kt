@@ -12,7 +12,7 @@ import com.poovam.facecapture.framework.camera.CaptureRegion
 /**
  * Created by poovam-5255 on 9/29/2018.
  */
-open class OverlayView : View {
+internal class OverlayView : View {
 
     private val mTransparentPaint = Paint()
 

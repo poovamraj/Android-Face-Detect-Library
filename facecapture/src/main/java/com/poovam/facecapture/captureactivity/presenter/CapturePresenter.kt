@@ -13,7 +13,7 @@ import com.poovam.facecapture.framework.persistence.Persistence
  * Created by poovam-5255 on 9/29/2018.
  */
 
-class CapturePresenter(private val cameraHandler: FotoApparatCameraHandler) : LifecycleObserver, CameraHandler.CameraEvents {
+internal class CapturePresenter(private val cameraHandler: FotoApparatCameraHandler) : LifecycleObserver, CameraHandler.CameraEvents {
 
     private val persistenceService: Persistence = InMemoryPersistence
 

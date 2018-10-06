@@ -15,7 +15,7 @@ import com.poovam.facecapture.framework.camera.model.ResultImage
 // We can slip in another persistence method without affecting other classes by implementing Persistence
 // for another concrete implementation
 
-object InMemoryPersistence : Persistence, LifecycleObserver {
+internal object InMemoryPersistence : Persistence, LifecycleObserver {
 
     var image: ResultImage? = null
 

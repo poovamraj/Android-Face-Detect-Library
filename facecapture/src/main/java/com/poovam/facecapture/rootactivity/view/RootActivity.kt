@@ -14,7 +14,7 @@ import com.poovam.facecapture.rootactivity.presenter.RootPresenter
  * Using activity and fragment so that in future we could provide support to add custom fragments
  */
 
-class RootActivity : BaseActivity(){
+internal class RootActivity : BaseActivity(){
 
     companion object {
         val CAPTURE_IMAGE_REQUEST_CODE = 20

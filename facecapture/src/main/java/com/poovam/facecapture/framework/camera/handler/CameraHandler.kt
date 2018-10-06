@@ -7,7 +7,7 @@ import com.poovam.facecapture.framework.camera.model.ResultImage
 /**
  * Created by poovam-5255 on 9/30/2018.
  */
-interface CameraHandler {
+internal interface CameraHandler {
 
     companion object {
         val DEFAULT_TIMEOUT = 200L

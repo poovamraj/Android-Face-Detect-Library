@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_capture.*
  * Created by poovam-5255 on 9/28/2018.
  * The activity which will have the camera instance
  */
-class CaptureActivity : BaseActivity(), CameraHandler.PermissionEvents, CapturePresenter.PresenterEvents{
+internal class CaptureActivity : BaseActivity(), CameraHandler.PermissionEvents, CapturePresenter.PresenterEvents{
 
     private var permissionView: PermissionRationaleView? = null
 

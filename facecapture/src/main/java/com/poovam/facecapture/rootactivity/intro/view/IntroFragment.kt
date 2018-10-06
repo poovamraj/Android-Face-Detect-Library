@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_intro.*
  * Created by poovam-5255 on 9/29/2018.
  */
 
-class IntroFragment : Fragment(){
+internal class IntroFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_intro,container,false)

@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Created by poovam-5255 on 9/29/2018.
  */
-class FotoApparatCameraHandler(
+internal class FotoApparatCameraHandler(
         private val activity: Activity,
         private val cameraView: CameraRenderer,
         private val timeoutInMillis: Long = CameraHandler.DEFAULT_TIMEOUT) : LifecycleObserver, CameraHandler {

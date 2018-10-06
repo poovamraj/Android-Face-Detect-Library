@@ -5,7 +5,7 @@ import com.poovam.facecapture.framework.camera.model.ResultImage
 /**
  * Created by poovam-5255 on 9/30/2018.
  */
-interface Persistence {
+internal interface Persistence {
 
     fun clearPersistence()
 

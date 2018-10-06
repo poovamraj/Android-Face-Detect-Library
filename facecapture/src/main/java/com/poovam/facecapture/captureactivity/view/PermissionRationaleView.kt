@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.dialog_permission.*
  * This is the dialog view that will show if the user has denied permission with "Dont Show Again"
  */
 
-class PermissionRationaleView(context: Context?){
+internal class PermissionRationaleView(context: Context?){
 
     private val dialog: Dialog = Dialog(context)
 
