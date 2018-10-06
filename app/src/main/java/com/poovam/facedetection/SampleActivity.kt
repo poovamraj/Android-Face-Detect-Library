@@ -18,9 +18,7 @@ class SampleActivity : AppCompatActivity() {
         val REQUEST_CODE = 1
     }
 
-    private val capturer = FaceCapturer(
-            baseTheme = FaceCapturer.BaseTheme.LIGHT
-    )
+    private val capturer = FaceCapturer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
