@@ -1,5 +1,6 @@
 package com.poovam.facecapture
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.support.v7.app.AppCompatActivity
@@ -10,7 +11,7 @@ import com.poovam.facecapture.rootactivity.view.RootActivity
  * Created by poovam-5255 on 9/28/2018.
  * The class that will act as entry point
  */
-class FaceCapturer () {
+class FaceCapturer{
 
     private val persistence = InMemoryPersistence
 
@@ -22,7 +23,7 @@ class FaceCapturer () {
 
     fun handleActivityResult(requestCode: Int, resultCode: Int, resultListener: OnResultListener){
         val result = persistence.image
-        if(result != null){
+        if(resultCode == Activity.RESULT_OK && result != null){
             resultListener.onUserComplete(result.image)
         }else{
             resultListener.onUserExited()
