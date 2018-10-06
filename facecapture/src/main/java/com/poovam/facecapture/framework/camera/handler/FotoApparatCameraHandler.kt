@@ -78,7 +78,9 @@ internal class FotoApparatCameraHandler(
                     frame ->
                     var bitmap = ImageProcessor.convertFrameToBitmap(frame, CameraHandler.FACE_DETECTION_IMAGE_QUALITY, bitmapOptions)
                     bitmap = ImageProcessor.cropToImage(bitmap, CaptureRegion.getCaptureRegionForScreen(bitmap.width, bitmap.height))
-                    return@map CapturedImage(frame, detectFace(bitmap))
+                    val capturedImage = CapturedImage(frame, detectFace(bitmap))
+                    bitmap.recycle()
+                    return@map capturedImage
                 }
                 .filter{
                     capturedImage -> return@filter capturedImage.face != null && capturedImage.face.confidence >= Face.CONFIDENCE_THRESHOLD
