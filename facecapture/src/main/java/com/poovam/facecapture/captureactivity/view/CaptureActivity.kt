@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction
 import android.view.MenuItem
 import com.poovam.facecapture.R
 import com.poovam.facecapture.captureactivity.presenter.CapturePresenter
-import com.poovam.facecapture.captureactivity.preview.view.PreviewFragment
+import com.poovam.facecapture.captureactivity.previewfragment.view.PreviewFragment
 import com.poovam.facecapture.framework.baseactivity.BaseActivity
 import com.poovam.facecapture.framework.camera.handler.CameraHandler
 import com.poovam.facecapture.framework.camera.handler.FotoApparatCameraHandler
